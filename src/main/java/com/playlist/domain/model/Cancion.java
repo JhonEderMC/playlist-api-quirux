@@ -15,14 +15,4 @@ public class Cancion {
     private String anno;
     private String genero;
 
-    public Cancion() {
-    }
-
-    public Cancion(String titulo, String artista, String album, String anno, String genero) {
-        this.titulo = titulo;
-        this.artista = artista;
-        this.album = album;
-        this.anno = anno;
-        this.genero = genero;
-    }
 }
