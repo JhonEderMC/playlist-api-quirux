@@ -15,7 +15,6 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/lists")
-//@CrossOrigin(origins = "http://localhost:4200") // TODO: configurar luego
 public class ListaReproduccionController {
 
     private final ListaReproduccionService service;
