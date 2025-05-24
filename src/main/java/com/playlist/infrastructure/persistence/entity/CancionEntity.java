@@ -1,4 +1,4 @@
-package com.playlist.infrastructure;
+package com.playlist.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
