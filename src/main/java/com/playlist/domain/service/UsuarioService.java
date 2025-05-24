@@ -2,11 +2,11 @@ package com.playlist.domain.service;
 
 import com.playlist.domain.model.Usuario;
 import com.playlist.domain.port.UsuarioRepository;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-@Service
+@Component
 public class UsuarioService {
 
     public static final String EL_USUARIO_YA_EXISTE = "El usuario ya existe";

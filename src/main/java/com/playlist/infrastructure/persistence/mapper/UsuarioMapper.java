@@ -10,11 +10,10 @@ public class UsuarioMapper {
     public UsuarioEntity toEntity(Usuario usuario) {
         if (usuario == null) return null;
 
-        return UsuarioEntity.builder()
-                .username(usuario.getUsername())
-                .password(usuario.getPassword())
-                .role(usuario.getRole())
-                .build();
+        return new UsuarioEntity(
+                usuario.getUsername(),
+                usuario.getPassword(),
+                usuario.getRole());
 
     }
 

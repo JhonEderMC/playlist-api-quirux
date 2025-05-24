@@ -1,14 +1,10 @@
 package com.playlist.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.data.annotation.Id;
+import lombok.*;
 
 @Getter
 @Setter
-@Builder
 @Entity
 @Table(name = "usuarios")
 public class UsuarioEntity {
@@ -24,4 +20,12 @@ public class UsuarioEntity {
 
     @Column(nullable = false)
     private String role;
+
+    public UsuarioEntity() {}
+
+    public UsuarioEntity(String username, String password, String role) {
+        this.username = username;
+        this.password = password;
+        this.role = role;
+    }
 }
