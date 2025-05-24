@@ -37,7 +37,7 @@ class AuthControllerTest {
     }
 
     @Test
-    void login_success() {
+    void loginSuccess() {
         LoginRequest request = LoginRequest.builder().username("user").password("pass").build();
 
         Authentication authentication = mock(Authentication.class);
@@ -54,7 +54,7 @@ class AuthControllerTest {
     }
 
     @Test
-    void login_failure() {
+    void loginFailure() {
         LoginRequest request = LoginRequest.builder().build();
         request.setUsername("user");
         request.setPassword("wrong");
@@ -69,7 +69,7 @@ class AuthControllerTest {
     }
 
     @Test
-    void register_success() {
+    void registerSuccess() {
         RegisterRequest request = RegisterRequest.builder().build();
         request.setUsername("newuser");
         request.setPassword("newpass");
@@ -84,7 +84,7 @@ class AuthControllerTest {
     }
 
     @Test
-    void register_failure() {
+    void registerFailure() {
         RegisterRequest request = RegisterRequest.builder().build();
         request.setUsername("existing");
         request.setPassword("pass");
