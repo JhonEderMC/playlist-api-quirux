@@ -2,10 +2,12 @@ package com.playlist.domain.service;
 
 import com.playlist.domain.model.ListaReproduccion;
 import com.playlist.domain.port.ListaReproduccionRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ListaReproduccionService {
 
     public static final String EL_NOMBRE_LISTA_NO_PUEDE_SER_NULO_O_VACIO = "El nombre de la lista no puede ser nulo o vacío";
