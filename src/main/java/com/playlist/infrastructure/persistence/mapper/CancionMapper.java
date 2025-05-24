@@ -10,13 +10,8 @@ public class CancionMapper {
     public CancionEntity toEntity(Cancion cancion) {
         if (cancion == null) return null;
 
-        return CancionEntity.builder()
-                .titulo(cancion.getTitulo())
-                .artista(cancion.getArtista())
-                .album(cancion.getAlbum())
-                .anno(cancion.getAnno())
-                .genero(cancion.getGenero())
-                .build();
+        return new CancionEntity(cancion.getTitulo(), cancion.getArtista(), cancion.getAlbum(), cancion.getAnno(), cancion.getGenero());
+
     }
 
     public Cancion toDomain(CancionEntity entity) {
