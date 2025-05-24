@@ -18,10 +18,7 @@ public class ListaReproduccionMapper {
     public ListaReproduccionEntity toEntity(ListaReproduccion lista) {
         if (lista == null) return null;
 
-        ListaReproduccionEntity entity = ListaReproduccionEntity.builder()
-                .nombre(lista.getNombre())
-                .descripcion(lista.getDescripcion())
-                .build();
+        ListaReproduccionEntity entity = new  ListaReproduccionEntity(lista.getNombre(),lista.getDescripcion());
 
         if (lista.getCanciones() != null) {
             lista.getCanciones().forEach(cancion -> entity.agregarCancion(cancionMapper.toEntity(cancion)));
@@ -33,10 +30,10 @@ public class ListaReproduccionMapper {
     public ListaReproduccion toDomain(ListaReproduccionEntity entity) {
         if (entity == null) return null;
 
-        ListaReproduccion lista = ListaReproduccion.builder()
-                .nombre(entity.getNombre())
-                .descripcion(entity.getDescripcion())
-                .build();
+        ListaReproduccion lista = new ListaReproduccion(
+                entity.getNombre(),
+                entity.getDescripcion()
+        );
 
         if (entity.getCanciones() != null) {
             lista.setCanciones(

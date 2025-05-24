@@ -1,7 +1,6 @@
 package com.playlist.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,7 +9,6 @@ import java.util.List;
 
 @Getter
 @Setter
-@Builder
 @Entity
 @Table(name = "listas_reproduccion")
 public class ListaReproduccionEntity {
@@ -25,9 +23,19 @@ public class ListaReproduccionEntity {
     private String descripcion;
 
     @OneToMany(mappedBy = "lista", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
-    private List<CancionEntity> canciones = new ArrayList<>();
+    private List<CancionEntity> canciones;
+
+    public ListaReproduccionEntity() {}
+
+    public ListaReproduccionEntity(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
 
     public void agregarCancion(CancionEntity cancion) {
+        if (canciones == null) {
+            canciones = new ArrayList<>();
+        }
         canciones.add(cancion);
         cancion.setLista(this);
     }
