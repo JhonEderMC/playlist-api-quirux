@@ -1,12 +1,14 @@
 package com.playlist.infrastructure.persistence.entity;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter
+@Builder
 @Entity
 @Table(name = "canciones")
 public class CancionEntity {
@@ -29,13 +31,4 @@ public class CancionEntity {
     @JoinColumn(name = "lista_id")
     private ListaReproduccionEntity lista;
 
-    public CancionEntity() {}
-
-    public CancionEntity(String titulo, String artista, String album, String anno, String genero) {
-        this.titulo = titulo;
-        this.artista = artista;
-        this.album = album;
-        this.anno = anno;
-        this.genero = genero;
-    }
 }
